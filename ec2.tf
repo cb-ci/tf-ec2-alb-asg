@@ -34,7 +34,7 @@ resource "aws_autoscaling_group" "sh_asg" {
   min_size         = 1
 
   # source
-  target_group_arns = [aws_lb_target_group.sh_alb_tg.arn]
+  target_group_arns = [aws_lb_target_group.sh_alb_tg.arn,aws_lb_target_group.sh_alb_tg_cjoc.arn]
 
   vpc_zone_identifier = [ # use private subnet
     aws_subnet.sh_subnet_2.id
